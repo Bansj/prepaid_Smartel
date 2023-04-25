@@ -30,9 +30,24 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        dataBinding = true
+    }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
+
+    // 메뉴창이 아래로 스크롤되기 위해 필요한 리사이클러뷰
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //뷰페이저2 라이브러리
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+
+    //화면 위치 표시 라이브러리
+    implementation 'com.tbuonomo:dotsindicator:4.2'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
