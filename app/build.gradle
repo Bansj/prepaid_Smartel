@@ -40,6 +40,11 @@ android {
 
 dependencies {
 
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+
+
     // 메뉴창이 아래로 스크롤되기 위해 필요한 리사이클러뷰
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
