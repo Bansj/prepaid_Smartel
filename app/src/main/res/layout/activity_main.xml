@@ -33,7 +33,7 @@
         android:background="#fffafa">
 
         <EditText
-            android:id="@+id/phone_number_edittext"
+            android:id="@+id/edittxt_phoneNums"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="20dp"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnSearch"
+            android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="20dp"
@@ -58,7 +58,7 @@
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/edittxt_phoneNums" />
 
         <TextView
             android:id="@+id/txt_language"
@@ -67,7 +67,7 @@
             android:layout_marginTop="180dp"
             android:text="🌐 language"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_search" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Prepaid_Smartel"
         tools:targetApi="31">
         <activity
-            android:name=".PrepaidInfo"
+            android:name=".PrepaidInfoActivity"
             android:exported="false" />
         <activity
             android:name=".Splash"

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#fffafa"
-    tools:context=".PrepaidInfo">
+    tools:context=".PrepaidInfoActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -204,62 +204,62 @@
         tools:layout_editor_absoluteX="40dp">
 
         <TextView
-            android:id="@+id/number_textview"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/numberTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Number: "
-            android:textStyle="bold" />
+            android:layout_height="25dp"
+            android:text="Number : "
+            android:gravity="center_vertical"
+            android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/open_flag_textview"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/carrierTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Open Flag: " />
+            android:layout_height="25dp"
+            android:text="Carrier : "
+            android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/bank_textview"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/ratePlanTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Bank: " />
+            android:text="Rate Plan : "
+            android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/bank_acnt_textview"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/rateAmountTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Bank Account: " />
+            android:text="Rate Amount : "
+            android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/carrier_textview"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/remainTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Carrier: " />
+            android:layout_height="25dp"
+            android:text="Remain : "
+            android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/rate_name_textview"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/bankTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Rate Name: " />
+            android:layout_height="25dp"
+            android:text="Bank : "
+            android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/rate_amount_textview"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/bankAccountTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Rate Amount: " />
-
-        <TextView
-            android:id="@+id/remain_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Remain: " />
-
+            android:layout_height="25dp"
+            android:text="Bank Account : "
+            android:gravity="center_vertical"/>
 
     </LinearLayout>
 
