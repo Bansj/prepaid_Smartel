@@ -5,17 +5,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#FFFAFA">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
+    <LinearLayout
+        android:background="#fffafa"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="85dp"
+            android:layout_gravity="center"
+            android:id="@+id/img_fragment2"
+            android:layout_width="230dp"
+            android:layout_height="80dp"
+            android:src="@drawable/smartel_noback_logo" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffafa">
+
+        <EditText
+            android:id="@+id/phone_number_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/editbox_action_shape"
+            android:hint="      📱 (ex. 01012345678)"
+            android:inputType="phone"
+            android:ems="11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_rectangle_orange"
+            android:text="조회하기"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_edittext" />
+
+        <TextView
+            android:id="@+id/txt_language"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="180dp"
+            android:text="🌐 language"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
