@@ -40,10 +40,13 @@ android {
 
 dependencies {
 
+    // Retrofit and related dependencies
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
+    // Gson dependency
+    implementation 'com.google.code.gson:gson:2.8.8'
 
     // 메뉴창이 아래로 스크롤되기 위해 필요한 리사이클러뷰
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
@@ -51,7 +54,7 @@ dependencies {
     //뷰페이저2 라이브러리
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
-    //화면 위치 표시 라이브러리
+    //화면 위치 표시 라이브러리 (인디케이터)
     implementation 'com.tbuonomo:dotsindicator:4.2'
 
     implementation 'androidx.core:core-ktx:1.7.0'
