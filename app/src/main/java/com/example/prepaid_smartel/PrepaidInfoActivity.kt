@@ -41,7 +41,7 @@ class PrepaidInfoActivity : AppCompatActivity() {
     inner class PrepaidInfoTask : AsyncTask<String, Void, JSONObject>() {
         override fun doInBackground(vararg params: String?): JSONObject? {
             val number = params[0]
-            val url = "https://vacs.smartelmobile.com/SKTRealTime/api_prepaid_info.php?hp_no=$number"
+            val url = "http://61.41.9.34/lg_RealTime/api_prepaid_info.php?hp_no=$number"
 
             val connection = URL(url).openConnection() as HttpURLConnection
             connection.requestMethod = "GET"

@@ -10,14 +10,14 @@
     android:background="#FFFAFA">
 
     <LinearLayout
-        android:background="#fffafa"
+        android:background="#fff"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_height="150dp">
+        android:layout_height="170dp">
 
         <ImageView
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:layout_marginHorizontal="85dp"
             android:layout_gravity="center"
             android:id="@+id/img_fragment2"
@@ -30,14 +30,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fffafa">
+        android:background="#fff">
 
         <EditText
-            android:id="@+id/edittxt_phoneNums"
+            android:id="@+id/editTxt_phoneNums"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/editbox_action_shape"
             android:hint="      📱 (ex. 01012345678)"
             android:inputType="phone"
@@ -51,14 +51,15 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/btn_rectangle_orange"
             android:text="조회하기"
             android:textColor="#fff"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edittxt_phoneNums" />
+            app:layout_constraintTop_toBottomOf="@+id/editTxt_phoneNums" />
 
         <TextView
             android:id="@+id/txt_language"
