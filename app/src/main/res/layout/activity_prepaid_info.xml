@@ -33,7 +33,7 @@
         android:id="@+id/constraintLayout3"
         android:layout_marginTop="150dp"
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="350dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/box_whitesmoke"
         android:elevation="4dp"
@@ -81,7 +81,7 @@
         <TextView
             android:id="@+id/ratePlanTextView"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -92,7 +92,7 @@
         <TextView
             android:id="@+id/rateAmountTextView"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
@@ -156,7 +156,7 @@
             android:id="@+id/result_carrier"
             android:layout_width="120dp"
             android:layout_height="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_nums" />
@@ -165,7 +165,7 @@
             android:id="@+id/result_ratePlan"
             android:layout_width="120dp"
             android:layout_height="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_carrier" />
@@ -174,25 +174,34 @@
             android:id="@+id/result_rateAmount"
             android:layout_width="120dp"
             android:layout_height="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_ratePlan" />
 
         <TextView
-            android:id="@+id/result_bank"
+            android:id="@+id/result_remain"
             android:layout_width="120dp"
             android:layout_height="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_rateAmount" />
 
         <TextView
+            android:id="@+id/result_bank"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+
+        <TextView
             android:id="@+id/result_bankAccount"
             android:layout_width="120dp"
             android:layout_height="25dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_bank" />
@@ -202,12 +211,12 @@
             android:layout_width="30sp"
             android:layout_height="30sp"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:background="@color/white"
             android:src="@drawable/ic_copy_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bankAccountTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/result_bankAccount" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

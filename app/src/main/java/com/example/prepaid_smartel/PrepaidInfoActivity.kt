@@ -23,13 +23,13 @@ class PrepaidInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prepaid_info)
 
-        numberTextView = findViewById(R.id.numberTextView)
-        carrierTextView = findViewById(R.id.carrierTextView)
-        ratePlanTextView = findViewById(R.id.ratePlanTextView)
-        rateAmountTextView = findViewById(R.id.rateAmountTextView)
-        remainTextView = findViewById(R.id.remainTextView)
-        bankTextView = findViewById(R.id.bankTextView)
-        bankAccountTextView = findViewById(R.id.bankAccountTextView)
+        numberTextView = findViewById(R.id.result_nums)
+        carrierTextView = findViewById(R.id.result_carrier)
+        ratePlanTextView = findViewById(R.id.result_ratePlan)
+        rateAmountTextView = findViewById(R.id.result_rateAmount)
+        remainTextView = findViewById(R.id.result_remain)
+        bankTextView = findViewById(R.id.result_bank)
+        bankAccountTextView = findViewById(R.id.result_bankAccount)
 
         val number = intent.getStringExtra("number")
 
