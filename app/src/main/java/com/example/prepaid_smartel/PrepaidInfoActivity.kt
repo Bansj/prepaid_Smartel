@@ -4,12 +4,12 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
+import androidx.core.content.ContextCompat
 
 class PrepaidInfoActivity : AppCompatActivity() {
 
@@ -19,6 +19,7 @@ class PrepaidInfoActivity : AppCompatActivity() {
     private lateinit var remainingText: TextView
     private lateinit var bankText: TextView
     private lateinit var bankAccountText: TextView
+    private lateinit var bankLogo: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +47,9 @@ class PrepaidInfoActivity : AppCompatActivity() {
         val bankAcnt = intent.getStringExtra("bankAcnt")
         bankAccountText.text = "$bank  $bankAcnt"
 
+
         val copyButton = findViewById<ImageButton>(R.id.btn_copy)
-        val textToCopy = "This is the text to be copied"
+
 
         copyButton.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -64,6 +66,18 @@ class PrepaidInfoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+    private fun getBankLogoDrawable(bank: String): Drawable? {
+        return when (bank) {
+            "농협" -> ContextCompat.getDrawable(this, R.drawable.nh_icon)
+            "국민" -> ContextCompat.getDrawable(this, R.drawable.kb_icon)
+            "신한" -> ContextCompat.getDrawable(this, R.drawable.shinhan_icon)
+            "기업" -> ContextCompat.getDrawable(this, R.drawable.industrialbank_icon)
+            "우리" -> ContextCompat.getDrawable(this, R.drawable.woori_icon)
+
+            // add cases for other banks as needed
+            else -> null // return null if no matching logo is found
+        }
     }
 }
 

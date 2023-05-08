@@ -8,6 +8,6 @@
     <string name="remain">"만료일자 : "</string>
     <string name="bankAndAccount">"계좌정보 : "</string>
     <string name="KRW">원</string>
-    <string name="paymentWireTransfer">"- 입금하시면 자동충전 됩니다. "</string>
+    <string name="paymentWireTransfer">"- 입금하시면 잠시뒤 자동충전 됩니다. "</string>
     <string name="search">조회하기</string>
 </resources>

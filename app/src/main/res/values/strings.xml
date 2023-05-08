@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">prepaid_Smartel</string>
+    <string name="app_name">Prepaid Smartel</string>
     <string name="carrier">Network Provider :</string>
     <string name="my_fee">Detailed Information</string>
-    <string name="rateNm">ratePlan :</string>
-    <string name="rateAmount">monthly Fee :</string>
+    <string name="rateNm">Rate Plan :</string>
+    <string name="rateAmount">Monthly Fee :</string>
     <string name="remain">Expiration Date :</string>
-    <string name="bankAndAccount">Bank Account Information :</string>
+    <string name="bankAndAccount">Bank Account Info :</string>
     <string name="KRW">KRW</string>
     <string name="paymentWireTransfer">After the transfer, it will be automatically recharged</string>
     <string name="search">Search</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">prepaid_Smartel</string>
+    <string name="app_name">Prepaid Smartel</string>
     <string name="carrier">"Network Provider : "</string>
     <string name="my_fee">详细信息</string>
     <string name="rateNm">手机套餐</string>
