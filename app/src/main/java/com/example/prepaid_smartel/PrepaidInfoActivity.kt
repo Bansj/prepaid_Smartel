@@ -22,22 +22,22 @@ class PrepaidInfoActivity : AppCompatActivity() {
         rateNameText = findViewById(R.id.result_ratePlan)
         rateAmountText = findViewById(R.id.result_rateAmount)
         remainingText = findViewById(R.id.result_remain)
-        bankText = findViewById(R.id.result_bank)
+
         bankAccountText = findViewById(R.id.result_bankAccount)
 
         // Get data from intent and display in UI
         val carrier = intent.getStringExtra("carrier")
-        carrierText.text = "Carrier: $carrier"
+        carrierText.text = "$carrier"
         val rateNm = intent.getStringExtra("rateNm")
-        rateNameText.text = "Rate name: $rateNm"
+        rateNameText.text = "$rateNm"
         val rateAmt = intent.getStringExtra("rateAmt")
-        rateAmountText.text = "Rate amount: $rateAmt"
+        rateAmountText.text = "$rateAmt 원"
         val remain = intent.getStringExtra("remain")
-        remainingText.text = "Remaining data: $remain"
+        remainingText.text = "$remain"
         val bank = intent.getStringExtra("bank")
-        bankText.text = "Bank: $bank"
+
         val bankAcnt = intent.getStringExtra("bankAcnt")
-        bankAccountText.text = "Bank account: $bankAcnt"
+        bankAccountText.text = "$bank $bankAcnt"
     }
 
 }

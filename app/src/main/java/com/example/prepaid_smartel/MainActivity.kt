@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -35,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         searchButton = findViewById(R.id.btn_search)
 
         loadingSpinner = findViewById(R.id.loading_spinner)
+
+        // Set loading spinner color to orange
+        loadingSpinner.indeterminateDrawable.setColorFilter(ContextCompat.getColor(this, R.color.orange), android.graphics.PorterDuff.Mode.MULTIPLY)
+
 
         // Set up click listener for search button
         searchButton.setOnClickListener {
@@ -82,6 +87,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             },
             { error ->
+
+                // Show loading spinner
+                loadingSpinner.visibility = View.GONE
                 // On error, show error message
                 Toast.makeText(this, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
                 Log.e("PrepaidInfo", "Error: ${error.message}")

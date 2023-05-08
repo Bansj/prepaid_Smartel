@@ -33,10 +33,10 @@
         android:id="@+id/constraintLayout3"
         android:layout_marginTop="120dp"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="380dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/box_whitesmoke"
-        android:elevation="4dp"
+        android:elevation="5dp"
         android:orientation="vertical"
         android:outlineProvider="background"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -55,83 +55,62 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/numberTextView"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center_vertical"
-            android:text="Number : "
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
         <TextView
             android:id="@+id/carrierTextView"
             android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
-            android:text="Carrier : "
+            android:text="통신사 : "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
         <TextView
             android:id="@+id/ratePlanTextView"
             android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="Rate Plan : "
+            android:text="요금제 : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carrierTextView" />
 
         <TextView
             android:id="@+id/rateAmountTextView"
             android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="Rate Amount : "
+            android:text="요금 잔액 : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratePlanTextView" />
 
         <TextView
             android:id="@+id/remainTextView"
             android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="Remain : "
+            android:text="만료 : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
-        <TextView
-            android:id="@+id/bankTextView"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:text="Bank : "
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/remainTextView" />
 
         <TextView
             android:id="@+id/bankAccountTextView"
             android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="Bank Account : "
+            android:text="계좌정보 : "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bankTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/remainTextView" />
 
 
 
@@ -143,75 +122,63 @@
 
 
 
-        <TextView
-            android:id="@+id/result_nums"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center_vertical"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/my_fee" />
+
 
         <TextView
             android:id="@+id/result_carrier"
             android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/result_nums" />
+            app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
         <TextView
             android:id="@+id/result_ratePlan"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_carrier" />
 
         <TextView
             android:id="@+id/result_rateAmount"
             android:layout_width="120dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_ratePlan" />
 
         <TextView
             android:id="@+id/result_remain"
             android:layout_width="120dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_rateAmount" />
 
-        <TextView
-            android:id="@+id/result_bank"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
 
         <TextView
             android:id="@+id/result_bankAccount"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/result_bank" />
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
 
         <ImageButton
             android:id="@+id/btn_copy"
