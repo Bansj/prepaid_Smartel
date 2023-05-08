@@ -114,12 +114,14 @@
 
 
 
+
         <!--결과 항목 (Result)-->
         <TextView
             android:id="@+id/result_carrier"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="35dp"
+            android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -131,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -142,6 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -153,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -165,6 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
             android:gravity="center_vertical"
             android:textColor="@color/black"
             android:textStyle="bold"

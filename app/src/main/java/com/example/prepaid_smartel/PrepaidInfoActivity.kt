@@ -3,6 +3,7 @@ package com.example.prepaid_smartel
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -33,17 +34,17 @@ class PrepaidInfoActivity : AppCompatActivity() {
 
         // Get data from intent and display in UI
         val carrier = intent.getStringExtra("carrier")
-        carrierText.text = "$carrier    "
+        carrierText.text = "$carrier"
         val rateNm = intent.getStringExtra("rateNm")
-        rateNameText.text = "$rateNm    "
+        rateNameText.text = "$rateNm"
         val rateAmt = intent.getStringExtra("rateAmt")
-        rateAmountText.text = "$rateAmt ₩   "
+        rateAmountText.text = "$rateAmt ₩"
         val remain = intent.getStringExtra("remain")
-        remainingText.text = "$remain    "
+        remainingText.text = "$remain"
         val bank = intent.getStringExtra("bank")
 
         val bankAcnt = intent.getStringExtra("bankAcnt")
-        bankAccountText.text = "$bank $bankAcnt "
+        bankAccountText.text = "$bank  $bankAcnt"
 
         val copyButton = findViewById<ImageButton>(R.id.btn_copy)
         val textToCopy = "This is the text to be copied"
@@ -55,7 +56,14 @@ class PrepaidInfoActivity : AppCompatActivity() {
             Toast.makeText(this, "계좌번호가 복사되었습니다. ", Toast.LENGTH_SHORT).show()
         }
 
-    }
+        // 메인메뉴로 이동하는 로그인 버튼 클릭 이벤트
+        val btnQuit = findViewById<ImageButton>(R.id.btn_quit)
+        btnQuit.setOnClickListener {
 
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+    }
 }
 
