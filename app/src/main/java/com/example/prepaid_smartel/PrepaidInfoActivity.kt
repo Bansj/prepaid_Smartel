@@ -1,8 +1,14 @@
 package com.example.prepaid_smartel
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 
 class PrepaidInfoActivity : AppCompatActivity() {
 
@@ -27,17 +33,28 @@ class PrepaidInfoActivity : AppCompatActivity() {
 
         // Get data from intent and display in UI
         val carrier = intent.getStringExtra("carrier")
-        carrierText.text = "$carrier"
+        carrierText.text = "$carrier    "
         val rateNm = intent.getStringExtra("rateNm")
-        rateNameText.text = "$rateNm"
+        rateNameText.text = "$rateNm    "
         val rateAmt = intent.getStringExtra("rateAmt")
-        rateAmountText.text = "$rateAmt 원"
+        rateAmountText.text = "$rateAmt 원    "
         val remain = intent.getStringExtra("remain")
-        remainingText.text = "$remain"
+        remainingText.text = "$remain    "
         val bank = intent.getStringExtra("bank")
 
         val bankAcnt = intent.getStringExtra("bankAcnt")
-        bankAccountText.text = "$bank $bankAcnt"
+        bankAccountText.text = "$bank $bankAcnt "
+
+        val copyButton = findViewById<ImageButton>(R.id.btn_copy)
+        val textToCopy = "This is the text to be copied"
+
+        copyButton.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("label", bankAccountText.text)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(this, "계좌번호가 복사되었습니다. ", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 }

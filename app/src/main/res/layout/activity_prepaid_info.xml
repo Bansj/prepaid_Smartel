@@ -61,7 +61,7 @@
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:gravity="center_vertical"
             android:text="통신사 : "
             app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="요금제 : "
             app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="요금 잔액 : "
             app:layout_constraintStart_toStartOf="parent"
@@ -94,9 +94,9 @@
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:text="만료 : "
+            android:text="만료일 : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
@@ -106,7 +106,7 @@
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="계좌정보 : "
             app:layout_constraintStart_toStartOf="parent"
@@ -114,21 +114,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+        <!--결과 항목 (Result)-->
         <TextView
             android:id="@+id/result_carrier"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -139,7 +130,7 @@
             android:id="@+id/result_ratePlan"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -148,9 +139,9 @@
 
         <TextView
             android:id="@+id/result_rateAmount"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -159,9 +150,9 @@
 
         <TextView
             android:id="@+id/result_remain"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -173,24 +164,34 @@
             android:id="@+id/result_bankAccount"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_copy"
             app:layout_constraintTop_toBottomOf="@+id/result_remain" />
 
         <ImageButton
             android:id="@+id/btn_copy"
             android:layout_width="30sp"
-            android:layout_height="30sp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
+            android:layout_height="35sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:src="@drawable/ic_copy_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/result_bankAccount" />
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- 송금후 결제가 완료됩니다. "
+            android:textSize="11dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -85,6 +85,10 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("bank", bank)
                 intent.putExtra("bankAcnt", bankAcnt)
                 startActivity(intent)
+
+                // Hide loading spinner
+                loadingSpinner.visibility = View.GONE
+
             },
             { error ->
 
