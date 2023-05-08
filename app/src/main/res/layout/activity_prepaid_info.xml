@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="상세 정보"
+            android:text="@string/my_fee"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -58,12 +58,12 @@
 
         <TextView
             android:id="@+id/carrierTextView"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="35dp"
             android:gravity="center_vertical"
-            android:text="통신사 : "
+            android:text="@string/carrier"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
@@ -74,7 +74,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:text="요금제 : "
+            android:text="@string/rateNm"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carrierTextView" />
 
@@ -85,7 +85,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:text="요금 잔액 : "
+            android:text="@string/rateAmount"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratePlanTextView" />
 
@@ -96,19 +96,19 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:text="만료일 : "
+            android:text="@string/remain"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
 
         <TextView
             android:id="@+id/bankAccountTextView"
-            android:layout_width="120dp"
+            android:layout_width="170dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
-            android:text="계좌정보 : "
+            android:text="@string/bankAndAccount"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/remainTextView" />
 
@@ -186,7 +186,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- 송금후 결제가 완료됩니다. "
+            android:text="@string/paymentWireTransfer"
             android:textSize="11dp"
             android:layout_marginBottom="25dp"
             android:layout_marginStart="15dp"

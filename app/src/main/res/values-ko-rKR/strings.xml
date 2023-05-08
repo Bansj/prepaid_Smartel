@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">스마텔 선불폰</string>
+    <string name="carrier">"통신망 : "</string>
+    <string name="my_fee">상세 정보</string>
+    <string name="rateNm">"요금제 : "</string>
+    <string name="rateAmount">"월 요금 : "</string>
+    <string name="remain">"만료일자 : "</string>
+    <string name="bankAndAccount">"계좌정보 : "</string>
+    <string name="KRW">원</string>
+    <string name="paymentWireTransfer">"- 입금하시면 자동충전 됩니다. "</string>
+    <string name="search">조회하기</string>
+</resources>

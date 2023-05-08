@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">prepaid_Smartel</string>
+    <string name="carrier">"Network Provider : "</string>
+    <string name="my_fee">Detailed Information</string>
+    <string name="rateNm">"ratePlan : "</string>
+    <string name="rateAmount">"monthly Fee : "</string>
+    <string name="remain">"Expiration Date : "</string>
+    <string name="bankAndAccount">"Bank Account Info : "</string>
+    <string name="KRW">₩</string>
+    <string name="paymentWireTransfer">After the transfer, it will be automatically recharged</string>
+    <string name="search">Search</string>
+</resources>

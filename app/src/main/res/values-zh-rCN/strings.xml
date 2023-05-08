@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">prepaid_Smartel</string>
+    <string name="carrier">"Network Provider : "</string>
+    <string name="my_fee">详细信息</string>
+    <string name="rateNm">手机套餐</string>
+    <string name="rateAmount">话费（月）</string>
+    <string name="remain">"话费余额 "</string>
+    <string name="bankAndAccount">账户信息</string>
+    <string name="KRW">₩</string>
+    <string name="paymentWireTransfer">- 转账后话费将自动充值。</string>
+    <string name="search">函询</string>
+</resources>

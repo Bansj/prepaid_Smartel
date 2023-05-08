@@ -37,7 +37,7 @@ class PrepaidInfoActivity : AppCompatActivity() {
         val rateNm = intent.getStringExtra("rateNm")
         rateNameText.text = "$rateNm    "
         val rateAmt = intent.getStringExtra("rateAmt")
-        rateAmountText.text = "$rateAmt 원    "
+        rateAmountText.text = "$rateAmt ₩   "
         val remain = intent.getStringExtra("remain")
         remainingText.text = "$remain    "
         val bank = intent.getStringExtra("bank")
