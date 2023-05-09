@@ -9,4 +9,5 @@
     <string name="KRW">KRW</string>
     <string name="paymentWireTransfer">After the transfer, it will be automatically recharged</string>
     <string name="search">Search</string>
+    <string name="copy_bank_acnt">The BankAccount number has been copied.</string>
 </resources>

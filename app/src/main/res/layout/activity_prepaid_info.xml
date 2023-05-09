@@ -190,10 +190,55 @@
             app:layout_constraintTop_toBottomOf="@+id/result_remain" />
 
         <ImageView
-            android:id="@+id/bank_image"
+            android:id="@+id/nh_bank"
             android:layout_width="30dp"
             android:layout_height="35dp"
             android:src="@drawable/nh_icon"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+
+        <ImageView
+            android:id="@+id/kb_bank"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:src="@drawable/kb_icon"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+
+        <ImageView
+            android:id="@+id/industrial_bank"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:src="@drawable/industrialbank_icon"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+
+        <ImageView
+            android:id="@+id/shinhan_bank"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:src="@drawable/shinhan_icon"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
+            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+
+        <ImageView
+            android:id="@+id/woori_bank"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:src="@drawable/woori_icon"
+            android:visibility="gone"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="5dp"
             app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"

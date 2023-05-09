@@ -47,15 +47,38 @@ class PrepaidInfoActivity : AppCompatActivity() {
         val bankAcnt = intent.getStringExtra("bankAcnt")
         bankAccountText.text = "$bank  $bankAcnt"
 
+        // Set visibility of bank icon based on bank value
+        bankLogo = findViewById(R.id.nh_bank)
+        if (bank == "농협") {
+            bankLogo.visibility = View.VISIBLE
+            bankLogo.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.nh_icon))
+        } else if (bank == "국민") {
+            val kbBankLogo = findViewById<ImageView>(R.id.kb_bank)
+            kbBankLogo.visibility = View.VISIBLE
+            kbBankLogo.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.kb_icon))
+        } else if (bank == "신한") {
+            val shinhanBankLogo = findViewById<ImageView>(R.id.shinhan_bank)
+            shinhanBankLogo.visibility = View.VISIBLE
+            shinhanBankLogo.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.shinhan_icon))
+        } else if (bank == "우리") {
+            val wooriBankLogo = findViewById<ImageView>(R.id.woori_bank)
+            wooriBankLogo.visibility = View.VISIBLE
+            wooriBankLogo.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.woori_icon))
+        } else if (bank == "기업") {
+            val ibkBankLogo = findViewById<ImageView>(R.id.industrial_bank)
+            ibkBankLogo.visibility = View.VISIBLE
+            ibkBankLogo.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.industrialbank_icon))
+        }
+
+
 
         val copyButton = findViewById<ImageButton>(R.id.btn_copy)
-
 
         copyButton.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("label", bankAccountText.text)
             clipboard.setPrimaryClip(clip)
-            Toast.makeText(this, "계좌번호가 복사되었습니다. ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "@string/copy_bank_acnt. ", Toast.LENGTH_SHORT).show()
         }
 
         // 메인메뉴로 이동하는 로그인 버튼 클릭 이벤트
@@ -66,18 +89,6 @@ class PrepaidInfoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-    }
-    private fun getBankLogoDrawable(bank: String): Drawable? {
-        return when (bank) {
-            "농협" -> ContextCompat.getDrawable(this, R.drawable.nh_icon)
-            "국민" -> ContextCompat.getDrawable(this, R.drawable.kb_icon)
-            "신한" -> ContextCompat.getDrawable(this, R.drawable.shinhan_icon)
-            "기업" -> ContextCompat.getDrawable(this, R.drawable.industrialbank_icon)
-            "우리" -> ContextCompat.getDrawable(this, R.drawable.woori_icon)
-
-            // add cases for other banks as needed
-            else -> null // return null if no matching logo is found
-        }
     }
 }
 

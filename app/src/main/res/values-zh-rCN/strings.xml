@@ -10,4 +10,5 @@
     <string name="KRW">₩</string>
     <string name="paymentWireTransfer">- 转账后话费将自动充值。</string>
     <string name="search">函询</string>
+    <string name="copy_bank_acnt">账号已复制。</string>
 </resources>
