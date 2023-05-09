@@ -37,15 +37,26 @@ class PrepaidInfoActivity : AppCompatActivity() {
         val carrier = intent.getStringExtra("carrier")
         carrierText.text = "$carrier"
         val rateNm = intent.getStringExtra("rateNm")
-        rateNameText.text = "$rateNm"
+        rateNameText.text = rateNm?.replace("(가상)", "")
         val rateAmt = intent.getStringExtra("rateAmt")
         rateAmountText.text = "$rateAmt ₩"
         val remain = intent.getStringExtra("remain")
         remainingText.text = "$remain"
         val bank = intent.getStringExtra("bank")
 
+
+        // Replace Korean bank names with user-defined values
+        val bankNames = mapOf(
+            "농협" to "NongHyup",
+            "국민" to "Kookmin",
+            "신한" to "Shinhan",
+            "우리" to "Woori",
+            "기업" to "IBK"
+        )
+        val bankName = bankNames.getOrDefault(bank, "Unknown Bank")
+
         val bankAcnt = intent.getStringExtra("bankAcnt")
-        bankAccountText.text = "$bank  $bankAcnt"
+        bankAccountText.text = "$bank $bankName $bankAcnt"
 
         // Set visibility of bank icon based on bank value
         bankLogo = findViewById(R.id.nh_bank)
@@ -71,14 +82,13 @@ class PrepaidInfoActivity : AppCompatActivity() {
         }
 
 
-
         val copyButton = findViewById<ImageButton>(R.id.btn_copy)
 
         copyButton.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("label", bankAccountText.text)
             clipboard.setPrimaryClip(clip)
-            Toast.makeText(this, "@string/copy_bank_acnt. ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Bank Account number has been copied.", Toast.LENGTH_SHORT).show()
         }
 
         // 메인메뉴로 이동하는 로그인 버튼 클릭 이벤트

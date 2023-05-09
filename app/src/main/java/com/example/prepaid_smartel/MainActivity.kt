@@ -1,9 +1,5 @@
 package com.example.prepaid_smartel
 
-
-
-
-import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,12 +15,10 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var phoneInput: EditText
     private lateinit var searchButton: Button
-
     private lateinit var loadingSpinner: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +28,10 @@ class MainActivity : AppCompatActivity() {
         // Get references to UI elements
         phoneInput = findViewById(R.id.btn_editText)
         searchButton = findViewById(R.id.btn_search)
-
         loadingSpinner = findViewById(R.id.loading_spinner)
 
         // Set loading spinner color to orange
         loadingSpinner.indeterminateDrawable.setColorFilter(ContextCompat.getColor(this, R.color.orange), android.graphics.PorterDuff.Mode.MULTIPLY)
-
 
         // Set up click listener for search button
         searchButton.setOnClickListener {
@@ -47,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             fetchPrepaidInfo(phoneNumber)
         }
     }
-
 
 
     private fun fetchPrepaidInfo(phoneNumber: String) {
@@ -88,10 +79,8 @@ class MainActivity : AppCompatActivity() {
 
                 // Hide loading spinner
                 loadingSpinner.visibility = View.GONE
-
             },
             { error ->
-
                 // Show loading spinner
                 loadingSpinner.visibility = View.GONE
                 // On error, show error message
