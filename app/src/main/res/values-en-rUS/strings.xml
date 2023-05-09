@@ -8,8 +8,10 @@
     <string name="remain">"Expiration Date : "</string>
     <string name="bankAndAccount">"Bank Account Info : "</string>
     <string name="KRW">KR₩</string>
-    <string name="paymentWireTransfer">After the transfer, it will be automatically recharged</string>
+    <string name="paymentWireTransfer">- After the transfer, it will be automatically recharged</string>
     <string name="search">Search</string>
     <string name="copy_bank_acnt">BankAccount number has been copied.</string>
     <string name="charge">Charge</string>
+    <string name="putNums">" Please enter the prepaid phone number you are using."</string>
+    <string name="moveToSearch">Go to the prepaid phone inquiry screen.</string>
 </resources>

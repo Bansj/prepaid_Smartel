@@ -32,6 +32,15 @@
         android:layout_height="match_parent"
         android:background="#fff">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/putNums"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_editText"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <EditText
             android:id="@+id/btn_editText"
             android:layout_width="match_parent"

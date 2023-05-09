@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         loadingSpinner = findViewById(R.id.loading_spinner)
 
         // Set loading spinner color to orange
-        loadingSpinner.indeterminateDrawable.setColorFilter(ContextCompat.getColor(this, R.color.orange), android.graphics.PorterDuff.Mode.MULTIPLY)
+        loadingSpinner.indeterminateDrawable.setColorFilter(ContextCompat.getColor(this, R.color.orange),
+            android.graphics.PorterDuff.Mode.MULTIPLY)
 
         // Set up click listener for search button
         searchButton.setOnClickListener {

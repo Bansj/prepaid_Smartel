@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Prepaid Smartel</string>
+    <string name="app_name">预付的 Smartel</string>
     <string name="carrier">网络供应商 :</string>
     <string name="my_fee">详细信息 :</string>
     <string name="rateNm">手机套餐 :</string>
@@ -12,4 +12,6 @@
     <string name="search">函询</string>
     <string name="copy_bank_acnt">账号已复制。</string>
     <string name="charge">充电</string>
+    <string name="putNums">请输入使用中的预付手机号码</string>
+    <string name="moveToSearch">移动到预付费手机查询画面。</string>
 </resources>

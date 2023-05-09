@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
+import java.text.NumberFormat
+import java.util.*
 
 class PrepaidInfoActivity : AppCompatActivity() {
 
@@ -37,8 +39,19 @@ class PrepaidInfoActivity : AppCompatActivity() {
         carrierText.text = "$carrier"
         val rateNm = intent.getStringExtra("rateNm")
         rateNameText.text = rateNm?.replace("(가상)", "")
-        val rateAmt = intent.getStringExtra("rateAmt")
-        rateAmountText.text = "$rateAmt ₩"
+        val rateAmt = intent.getStringExtra("rateAmt")?.toIntOrNull() ?: 0
+        //val formattedRateAmt = String.format("%,d", rateAmt) // add commas to rateAmt
+
+        // Get the appropriate currency symbol based on the device's language setting
+        val currencySymbol = when (Locale.getDefault().language) {
+            "ko" -> "원" // for Korean
+            else -> "KR₩" // for other languages
+        }
+
+// Format the rateAmt value with commas and the appropriate currency symbol
+        val formattedRateAmt = NumberFormat.getInstance().format(rateAmt)
+        rateAmountText.text = "$formattedRateAmt $currencySymbol"
+
         val remain = intent.getStringExtra("remain")
         remainingText.text = "$remain"
         val bank = intent.getStringExtra("bank")
@@ -81,7 +94,6 @@ class PrepaidInfoActivity : AppCompatActivity() {
 
 
         val copyButton = findViewById<ImageButton>(R.id.btn_copy)
-
         copyButton.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("label", bankAccountText.text)
@@ -93,6 +105,8 @@ class PrepaidInfoActivity : AppCompatActivity() {
         // 메인메뉴로 이동하는 로그인 버튼 클릭 이벤트
         val btnQuit = findViewById<ImageButton>(R.id.btn_quit)
         btnQuit.setOnClickListener {
+            val toastMoveMessage = getString(R.string.moveToSearch)
+            Toast.makeText(this, toastMoveMessage, Toast.LENGTH_SHORT).show()
 
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

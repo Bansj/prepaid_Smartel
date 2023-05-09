@@ -33,7 +33,7 @@
         android:id="@+id/constraintLayout3"
         android:layout_marginTop="120dp"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="420dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/box_whitesmoke"
         android:elevation="5dp"
@@ -49,7 +49,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/my_fee"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="22dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +64,7 @@
             android:layout_marginTop="35dp"
             android:gravity="center_vertical"
             android:text="@string/carrier"
+            android:textSize="17dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
@@ -75,6 +76,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="@string/rateNm"
+            android:textSize="17dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carrierTextView" />
 
@@ -86,6 +88,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="@string/rateAmount"
+            android:textSize="17dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratePlanTextView" />
 
@@ -97,6 +100,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="@string/remain"
+            android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
@@ -109,6 +113,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="@string/bankAndAccount"
+            android:textSize="17dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/remainTextView" />
 
@@ -123,6 +128,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
+            android:textSize="17dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -135,6 +141,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
+            android:textSize="17dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +154,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
+            android:textSize="17dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -159,6 +167,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
+            android:textSize="17dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -172,6 +181,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="5dp"
             android:gravity="center_vertical"
+            android:textSize="17dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btn_copy"
@@ -248,7 +258,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/paymentWireTransfer"
-            android:textSize="11dp"
+            android:textSize="15dp"
             android:layout_marginBottom="25dp"
             android:layout_marginStart="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
