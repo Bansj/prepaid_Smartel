@@ -7,8 +7,9 @@
     <string name="rateAmount">"Monthly Fee : "</string>
     <string name="remain">"Expiration Date : "</string>
     <string name="bankAndAccount">"Bank Account Info : "</string>
-    <string name="KRW">₩</string>
+    <string name="KRW">KR₩</string>
     <string name="paymentWireTransfer">After the transfer, it will be automatically recharged</string>
     <string name="search">Search</string>
-    <string name="copy_bank_acnt">The BankAccount number has been copied.</string>
+    <string name="copy_bank_acnt">BankAccount number has been copied.</string>
+    <string name="charge">Charge</string>
 </resources>
