@@ -9,7 +9,7 @@
     android:background="#fffafa"
     tools:context=".PrepaidInfoActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -18,29 +18,46 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/btn_quit"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="#FFFAFA"
+            android:src="@drawable/icon_arrow_back_orange_24"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/btn_homeMenu"
             android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginHorizontal="85dp"
-            android:src="@drawable/smartel_noback_logo" />
+            android:src="@drawable/smartel_noback_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="520dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/box_whitesmoke"
         android:elevation="5dp"
         android:orientation="vertical"
         android:outlineProvider="background"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="40dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
             android:id="@+id/my_fee"
@@ -49,7 +66,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/my_fee"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,66 +75,75 @@
 
         <TextView
             android:id="@+id/carrierTextView"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="55dp"
             android:gravity="center_vertical"
             android:text="@string/carrier"
-            android:textSize="17dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
         <TextView
             android:id="@+id/ratePlanTextView"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:text="@string/rateNm"
-            android:textSize="17dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carrierTextView" />
 
         <TextView
             android:id="@+id/rateAmountTextView"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:text="@string/rateAmount"
-            android:textSize="17dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratePlanTextView" />
 
         <TextView
             android:id="@+id/remainTextView"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:text="@string/remain"
-            android:textSize="16dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
 
         <TextView
             android:id="@+id/bankAccountTextView"
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:text="@string/bankAndAccount"
-            android:textSize="17dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/remainTextView" />
 
-
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/paymentWireTransfer"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bankAccountTextView" />
 
 
         <!--결과 항목 (Result)-->
@@ -125,12 +151,12 @@
             android:id="@+id/result_carrier"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="55dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
-            android:textSize="17dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_fee" />
 
@@ -138,12 +164,12 @@
             android:id="@+id/result_ratePlan"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
-            android:textSize="17dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_carrier" />
 
@@ -151,12 +177,12 @@
             android:id="@+id/result_rateAmount"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
-            android:textSize="17dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_ratePlan" />
 
@@ -164,105 +190,106 @@
             android:id="@+id/result_remain"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:gravity="center_vertical"
-            android:textSize="17dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result_rateAmount" />
+
+        <TextView
+            android:id="@+id/result_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
         <TextView
             android:id="@+id/result_bankAccount"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="40dp"
             android:layout_marginEnd="5dp"
             android:gravity="center_vertical"
-            android:textSize="17dp"
             android:textColor="@color/black"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btn_copy"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintTop_toBottomOf="@+id/result_bank" />
 
         <ImageButton
             android:id="@+id/btn_copy"
             android:layout_width="30sp"
             android:layout_height="35sp"
-            android:layout_marginTop="40dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginBottom="50dp"
             android:background="@color/white"
             android:src="@drawable/ic_copy_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintTop_toBottomOf="@+id/result_bank" />
 
         <ImageView
             android:id="@+id/nh_bank"
             android:layout_width="30dp"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/nh_icon"
             android:visibility="gone"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintEnd_toStartOf="@+id/result_bank"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageView
             android:id="@+id/kb_bank"
             android:layout_width="30dp"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/kb_icon"
             android:visibility="gone"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintEnd_toStartOf="@+id/result_bank"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageView
             android:id="@+id/ibk_bank"
             android:layout_width="30dp"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/ibk_icon"
             android:visibility="gone"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintEnd_toStartOf="@+id/result_bank"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageView
             android:id="@+id/shinhan_bank"
             android:layout_width="30dp"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/shinhan_icon"
             android:visibility="gone"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintEnd_toStartOf="@+id/result_bank"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageView
             android:id="@+id/woori_bank"
             android:layout_width="30dp"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/woori_icon"
             android:visibility="gone"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/result_bankAccount"
-            app:layout_constraintTop_toBottomOf="@+id/result_remain" />
+            app:layout_constraintEnd_toStartOf="@+id/result_bank"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/paymentWireTransfer"
-            android:textSize="15dp"
-            android:layout_marginBottom="25dp"
-            android:layout_marginStart="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -277,36 +304,12 @@
         android:outlineProvider="background"
         android:text="@string/charge"
         android:textColor="#fff"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="35dp"
-        android:backgroundTint="@color/orange"
-        android:elevation="10dp"
-        android:gravity="center"
-        android:outlineProvider="background"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/btn_quit"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@color/orange"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_close_24" />
-
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

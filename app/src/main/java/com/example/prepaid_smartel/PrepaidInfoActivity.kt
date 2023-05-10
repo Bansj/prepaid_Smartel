@@ -26,18 +26,19 @@ class PrepaidInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prepaid_info)
 
+
         // Get references to UI elements
         carrierText = findViewById(R.id.result_carrier)
         rateNameText = findViewById(R.id.result_ratePlan)
         rateAmountText = findViewById(R.id.result_rateAmount)
         remainingText = findViewById(R.id.result_remain)
-
+        bankText = findViewById(R.id.result_bank)
         bankAccountText = findViewById(R.id.result_bankAccount)
 
         // Get data from intent and display in UI
-        val carrier = intent.getStringExtra("carrier")
+        val carrier = intent.getStringExtra("carrier") ?: ""
         carrierText.text = "$carrier"
-        val rateNm = intent.getStringExtra("rateNm")
+        val rateNm = intent.getStringExtra("rateNm") ?: ""
         rateNameText.text = rateNm?.replace("(가상)", "")
         val rateAmt = intent.getStringExtra("rateAmt")?.toIntOrNull() ?: 0
         //val formattedRateAmt = String.format("%,d", rateAmt) // add commas to rateAmt
@@ -49,12 +50,12 @@ class PrepaidInfoActivity : AppCompatActivity() {
         }
 
 // Format the rateAmt value with commas and the appropriate currency symbol
-        val formattedRateAmt = NumberFormat.getInstance().format(rateAmt)
+        val formattedRateAmt = NumberFormat.getInstance().format(rateAmt) ?: ""
         rateAmountText.text = "$formattedRateAmt $currencySymbol"
 
-        val remain = intent.getStringExtra("remain")
+        val remain = intent.getStringExtra("remain") ?: ""
         remainingText.text = "$remain"
-        val bank = intent.getStringExtra("bank")
+        val bank = intent.getStringExtra("bank") ?: ""
 
         // Replace Korean bank names with user-defined values
         val bankNames = mapOf(
@@ -64,10 +65,11 @@ class PrepaidInfoActivity : AppCompatActivity() {
             "우리" to "Woori",
             "기업" to "IBK"
         )
-        val bankName = bankNames.getOrDefault(bank, "Unknown Bank")
+        val bankName = bankNames.getOrDefault(bank, "Unknown Bank") ?: ""
+        bankText.text = "$bank $bankName"
 
-        val bankAcnt = intent.getStringExtra("bankAcnt")
-        bankAccountText.text = "$bank $bankName $bankAcnt"
+        val bankAcnt = intent.getStringExtra("bankAcnt") ?: ""
+        bankAccountText.text = "$bankAcnt"
 
         // Set visibility of bank icon based on bank value
         bankLogo = findViewById(R.id.nh_bank)
