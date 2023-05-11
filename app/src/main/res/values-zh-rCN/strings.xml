@@ -15,4 +15,5 @@
     <string name="putNums">请输入使用中的预付手机号码</string>
     <string name="moveToSearch">移动到预付费手机查询画面。</string>
     <string name="acceptPush">推送通知同意</string>
+    <string name="remain2">剩余金额 :</string>
 </resources>

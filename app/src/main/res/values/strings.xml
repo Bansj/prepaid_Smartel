@@ -14,4 +14,5 @@
     <string name="putNums">Please enter the prepaid phone number you are using.</string>
     <string name="moveToSearch">Go to the prepaid phone inquiry screen.</string>
     <string name="acceptPush">Accept push notifications</string>
+    <string name="remain2">Remaining Amount :</string>
 </resources>

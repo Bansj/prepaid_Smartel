@@ -22,6 +22,9 @@ class PrepaidInfoActivity : AppCompatActivity() {
     private lateinit var bankAccountText: TextView
     private lateinit var bankLogo: ImageView
 
+    private lateinit var rateAmountEmptyView : TextView
+    private lateinit var remainTextView2 : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prepaid_info)
@@ -35,28 +38,50 @@ class PrepaidInfoActivity : AppCompatActivity() {
         bankText = findViewById(R.id.result_bank)
         bankAccountText = findViewById(R.id.result_bankAccount)
 
+        rateAmountEmptyView = findViewById(R.id.rateAmountEmptyView)
+        remainTextView2 = findViewById(R.id.remainTextView2)
+
         // Get data from intent and display in UI
         val carrier = intent.getStringExtra("carrier") ?: ""
         carrierText.text = "$carrier"
         val rateNm = intent.getStringExtra("rateNm") ?: ""
         rateNameText.text = rateNm?.replace("(가상)", "")
-        val rateAmt = intent.getStringExtra("rateAmt")?.toIntOrNull() ?: 0
-        //val formattedRateAmt = String.format("%,d", rateAmt) // add commas to rateAmt
 
-        // Get the appropriate currency symbol based on the device's language setting
-        val currencySymbol = when (Locale.getDefault().language) {
-            "ko" -> "원" // for Korean
-            else -> "KR₩" // for other languages
+        // Check if it's a 종량요금제 (contains "pps" in rate name)
+        if (rateNm?.contains("pps") == true) {
+            // Set rate amount to "X"
+            rateAmountText.text = "X"
+            // Show rateAmountEmptyView
+            rateAmountEmptyView.visibility = View.VISIBLE
+            // Add "원" to remainingText
+            val remain = intent.getStringExtra("remain") ?: ""
+            remainingText.text = "$remain 원"
+            // Show remainTextView2
+            remainTextView2.visibility = View.VISIBLE
+        } else {
+            // Get rate amount and format it with commas and currency symbol
+            val rateAmt = intent.getStringExtra("rateAmt")?.toIntOrNull() ?: 0
+            // Get the appropriate currency symbol based on the device's language setting
+            val currencySymbol = when (Locale.getDefault().language) {
+                "ko" -> "원" // for Korean
+                else -> "KR₩" // for other languages
+            }
+            // Format the rateAmt value with commas and the appropriate currency symbol
+            val formattedRateAmt = NumberFormat.getInstance().format(rateAmt) ?: ""
+            rateAmountText.text = "$formattedRateAmt $currencySymbol"
+            // Hide rateAmountEmptyView
+            rateAmountEmptyView.visibility = View.GONE
+            // Check if remainingText has "원" and remove it if it does
+            val remain = intent.getStringExtra("remain")?.replace("원", "") ?: ""
+            remainingText.text = remain
+            // Hide remainTextView2
+            remainTextView2.visibility = View.GONE
         }
 
-// Format the rateAmt value with commas and the appropriate currency symbol
-        val formattedRateAmt = NumberFormat.getInstance().format(rateAmt) ?: ""
-        rateAmountText.text = "$formattedRateAmt $currencySymbol"
 
-        val remain = intent.getStringExtra("remain") ?: ""
-        remainingText.text = "$remain"
+
+
         val bank = intent.getStringExtra("bank") ?: ""
-
         // Replace Korean bank names with user-defined values
         val bankNames = mapOf(
             "농협" to "NongHyup",

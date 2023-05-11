@@ -25,12 +25,13 @@
             android:layout_gravity="center"
             android:background="#FFFAFA"
             android:src="@drawable/icon_arrow_back_orange_24"
-            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+       <!-- <ImageView
             android:id="@+id/btn_homeMenu"
             android:layout_width="150dp"
             android:layout_height="30dp"
@@ -40,7 +41,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -110,6 +111,19 @@
             app:layout_constraintTop_toBottomOf="@+id/ratePlanTextView" />
 
         <TextView
+            android:id="@+id/rateAmountEmptyView"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:background="#fff"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratePlanTextView" />
+
+        <TextView
             android:id="@+id/remainTextView"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
@@ -121,6 +135,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
+        <TextView
+            android:id="@+id/remainTextView2"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/remain2"
+            android:background="#fff"
+            android:visibility="gone"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rateAmountTextView" />
 
         <TextView
             android:id="@+id/bankAccountTextView"
@@ -237,9 +264,9 @@
 
         <ImageView
             android:id="@+id/nh_bank"
-            android:layout_width="30dp"
+            android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/nh_icon"
             android:visibility="gone"
@@ -248,9 +275,9 @@
 
         <ImageView
             android:id="@+id/kb_bank"
-            android:layout_width="30dp"
+            android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/kb_icon"
             android:visibility="gone"
@@ -259,9 +286,9 @@
 
         <ImageView
             android:id="@+id/ibk_bank"
-            android:layout_width="30dp"
+            android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/ibk_icon"
             android:visibility="gone"
@@ -270,9 +297,9 @@
 
         <ImageView
             android:id="@+id/shinhan_bank"
-            android:layout_width="30dp"
+            android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/shinhan_icon"
             android:visibility="gone"
@@ -281,9 +308,9 @@
 
         <ImageView
             android:id="@+id/woori_bank"
-            android:layout_width="30dp"
+            android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/woori_icon"
             android:visibility="gone"

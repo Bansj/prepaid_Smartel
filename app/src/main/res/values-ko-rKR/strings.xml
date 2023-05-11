@@ -15,4 +15,5 @@
     <string name="putNums">사용중인 선불폰 번호를 입력해주세요.</string>
     <string name="moveToSearch">선불폰 조회화면으로 이동합니다.</string>
     <string name="acceptPush">푸시알림 동의</string>
+    <string name="remain2">잔여 금액 :</string>
 </resources>

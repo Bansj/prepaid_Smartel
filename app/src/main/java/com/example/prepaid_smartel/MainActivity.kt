@@ -1,23 +1,30 @@
 package com.example.prepaid_smartel
 
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.InputType
 import android.util.Log
 import android.view.Gravity
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
-
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,16 +34,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loadingSpinner: ProgressBar
 
 
-
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Get references to UI elements
+
+
+
+
+    // Get references to UI elements
         phoneInput = findViewById(R.id.btn_editText)
         phoneInput.gravity = Gravity.CENTER
-
-
         searchButton = findViewById(R.id.btn_search)
         loadingSpinner = findViewById(R.id.loading_spinner)
 
@@ -76,6 +85,10 @@ class MainActivity : AppCompatActivity() {
                 Log.d("PrepaidInfo", "Rate amount: $rateAmt")
                 val remain = if (!response.isNull("remain")) response.getString("remain") else ""
                 Log.d("PrepaidInfo", "Remain: $remain")
+
+
+
+
                 val bank = if (!response.isNull("bank")) response.getString("bank") else ""
                 Log.d("PrepaidInfo", "Bank: $bank")
                 val bankAcnt = if (!response.isNull("bank_acnt")) response.getString("bank_acnt") else ""
@@ -102,6 +115,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
                 Log.e("PrepaidInfo", "Error: ${error.message}")
             }
+        )
+
+        // Set timeout to 2 minutes
+        request.retryPolicy = DefaultRetryPolicy(
+            180 * 1000,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
 
         // Add request to Volley queue

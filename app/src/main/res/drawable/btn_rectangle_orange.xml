@@ -3,7 +3,7 @@
     android:shape="rectangle" android:padding = "10dp">
 
     <!-- 버튼 색깔 -->
-    <solid android:color="#FF7F50"/>
+    <solid android:color="#F26925"/>
     <!-- 네 귀퉁이? 모양 -->
     <corners
         android:bottomLeftRadius="10dp"
