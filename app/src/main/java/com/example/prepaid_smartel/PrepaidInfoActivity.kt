@@ -47,35 +47,45 @@ class PrepaidInfoActivity : AppCompatActivity() {
         val rateNm = intent.getStringExtra("rateNm") ?: ""
         rateNameText.text = rateNm?.replace("(가상)", "")
 
-        // Check if it's a 종량요금제 (contains "pps" in rate name)
-        if (rateNm?.contains("PPS") == true) {
-            // Set rate amount to "X"
-            rateAmountText.text = ""
-            // Show rateAmountEmptyView
+        val rateAmt = intent.getStringExtra("rateAmt")?.toIntOrNull() ?: 0
+        val currencySymbol = when (Locale.getDefault().language) {
+            "ko" -> "원" // for Korean
+            else -> "KR₩" // for other languages
+        }
+
+        if (rateNm?.contains("PPS") == true) { // If it is a prepaid plan
+            // Show the rateAmountEmptyView and remainTextView2
             rateAmountEmptyView.visibility = View.VISIBLE
-            // Add "원" to remainingText
-            val remain = intent.getStringExtra("remain") ?: ""
-            remainingText.text = "$remain 원"
-            // Show remainTextView2
             remainTextView2.visibility = View.VISIBLE
-        } else {
-            // Get rate amount and format it with commas and currency symbol
-            val rateAmt = intent.getStringExtra("rateAmt")?.toIntOrNull() ?: 0
-            // Get the appropriate currency symbol based on the device's language setting
-            val currencySymbol = when (Locale.getDefault().language) {
-                "ko" -> "원" // for Korean
-                else -> "KR₩" // for other languages
+
+            // Set rateAmountEmptyView and remainingText values
+            rateAmountEmptyView.text = " "
+            val remain = intent.getStringExtra("remain") ?: ""
+            if (Locale.getDefault().language == "ko") {
+                remainingText.text = "$remain $currencySymbol"
+            } else {
+                remainingText.text = "$remain KR₩"
             }
+
+        } else { // If it is a flat rate plan
+            // Hide the rateAmountEmptyView and remainTextView2
+            rateAmountEmptyView.visibility = View.GONE
+            remainTextView2.visibility = View.GONE
+
             // Format the rateAmt value with commas and the appropriate currency symbol
             val formattedRateAmt = NumberFormat.getInstance().format(rateAmt) ?: ""
-            rateAmountText.text = "$formattedRateAmt $currencySymbol"
-            // Hide rateAmountEmptyView
-            rateAmountEmptyView.visibility = View.GONE
-            // Check if remainingText has "원" and remove it if it does
-            val remain = intent.getStringExtra("remain")?.replace("원", "") ?: ""
-            remainingText.text = remain
-            // Hide remainTextView2
-            remainTextView2.visibility = View.GONE
+            if (Locale.getDefault().language == "ko") {
+                rateAmountText.text = "$formattedRateAmt $currencySymbol"
+            } else {
+                rateAmountText.text = "$formattedRateAmt KR₩"
+            }
+
+            val remain = intent.getStringExtra("remain") ?: ""
+            if (Locale.getDefault().language == "ko") {
+                remainingText.text = "$remain"
+            } else {
+                remainingText.text = "$remain"
+            }
         }
 
 
