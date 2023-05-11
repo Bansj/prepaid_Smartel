@@ -21,7 +21,7 @@ class PrepaidInfoActivity : AppCompatActivity() {
     private lateinit var bankText: TextView
     private lateinit var bankAccountText: TextView
     private lateinit var bankLogo: ImageView
-
+    //종량제 요금제일 경우에 다른 목록을 보여주기 위한 선언
     private lateinit var rateAmountEmptyView : TextView
     private lateinit var remainTextView2 : TextView
 
@@ -88,9 +88,6 @@ class PrepaidInfoActivity : AppCompatActivity() {
             }
         }
 
-
-
-
         val bank = intent.getStringExtra("bank") ?: ""
         // Replace Korean bank names with user-defined values
         val bankNames = mapOf(
@@ -102,10 +99,8 @@ class PrepaidInfoActivity : AppCompatActivity() {
         )
         val bankName = bankNames.getOrDefault(bank, "Unknown Bank") ?: ""
         bankText.text = "$bank $bankName"
-
         val bankAcnt = intent.getStringExtra("bankAcnt") ?: ""
         bankAccountText.text = "$bankAcnt"
-
         // Set visibility of bank icon based on bank value
         bankLogo = findViewById(R.id.nh_bank)
         if (bank == "농협") {
@@ -129,7 +124,6 @@ class PrepaidInfoActivity : AppCompatActivity() {
             ibkBankLogo.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ibk_icon))
         }
 
-
         val copyButton = findViewById<ImageButton>(R.id.btn_copy)
         copyButton.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -138,7 +132,6 @@ class PrepaidInfoActivity : AppCompatActivity() {
             val toastCopiedMessage = getString(R.string.copy_bank_acnt)
             Toast.makeText(this, toastCopiedMessage, Toast.LENGTH_SHORT).show()
         }
-
         // 메인메뉴로 이동하는 로그인 버튼 클릭 이벤트
         val btnQuit = findViewById<ImageButton>(R.id.btn_quit)
         btnQuit.setOnClickListener {
