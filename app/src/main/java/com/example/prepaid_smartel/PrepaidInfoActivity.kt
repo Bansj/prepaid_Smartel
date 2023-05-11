@@ -48,9 +48,9 @@ class PrepaidInfoActivity : AppCompatActivity() {
         rateNameText.text = rateNm?.replace("(가상)", "")
 
         // Check if it's a 종량요금제 (contains "pps" in rate name)
-        if (rateNm?.contains("pps") == true) {
+        if (rateNm?.contains("PPS") == true) {
             // Set rate amount to "X"
-            rateAmountText.text = "X"
+            rateAmountText.text = ""
             // Show rateAmountEmptyView
             rateAmountEmptyView.visibility = View.VISIBLE
             // Add "원" to remainingText
