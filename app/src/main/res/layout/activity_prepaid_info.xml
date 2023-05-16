@@ -371,7 +371,7 @@
         android:background="@drawable/box_whitesmoke"
         android:elevation="5dp"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="invisible"
         android:outlineProvider="background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
