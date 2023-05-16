@@ -1,9 +1,6 @@
 package com.example.prepaid_smartel
 
-import android.app.AlarmManager
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
+import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -12,6 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var phoneInput: EditText
     private lateinit var searchButton: Button
     private lateinit var loadingSpinner: ProgressBar
-    lateinit var phoneNumber: String
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +50,8 @@ class MainActivity : AppCompatActivity() {
         loadingSpinner.indeterminateDrawable.setColorFilter(ContextCompat.getColor(
             this, R.color.orange),
             android.graphics.PorterDuff.Mode.MULTIPLY)
-        // Add text watcher to phone input field
+
+        // Add text watcher to phone input field 전화번호 형식으로 기입되게 0100-0000-0000
         phoneInput.addTextChangedListener(object : TextWatcher {
             private var isFormatting = false
             private var isDeleting = false
@@ -69,7 +68,6 @@ class MainActivity : AppCompatActivity() {
                 if (isFormatting || isDeleting) {
                     return
                 }
-
                 isFormatting = true
 
                 // Remove all non-numeric characters from the input
@@ -86,7 +84,6 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     phone
                 }
-
                 // Set the formatted text on the input field
                 phoneInput.setText(formatted)
                 phoneInput.setSelection(formatted.length)
@@ -97,13 +94,27 @@ class MainActivity : AppCompatActivity() {
 
         // Set up click listener for search button
         searchButton.setOnClickListener {
+
+            val inputText = phoneInput.text.toString().trim()
+            if (inputText.isBlank() || inputText.length < 11) {
+                val toastNumMessage = getString(R.string.correctForm)
+                Toast.makeText(this, toastNumMessage, Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // return to prevent further execution
+            }
+            //버튼을 클릭했을 때 키보드 숨김
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(phoneInput.windowToken, 0)
-            Snackbar.make(searchButton, "선불 잔액 조회의 경우,\n" +
-                    "네트워크 상황에 따라 최대 3분 이상 소요될 수 있습니다. ", Snackbar.LENGTH_LONG).show()
 
-//            Toast.makeText(this, "선불 잔액 조회의 경우,\n" +
-//                    "네트워크 상황에 따라 최대 3분 이상 소요될 수 있습니다. ", Toast.LENGTH_LONG).show()
+            // 조회시간 알림 스낵메시지
+            val snackbarLoadingMessage = getString(R.string.loadingMinutes)
+            val snackbar = Snackbar.make(searchButton, snackbarLoadingMessage, Snackbar.LENGTH_LONG)
+            snackbar.show()
+            // Dismiss the Snackbar message after 3 seconds
+            Handler(Looper.getMainLooper()).postDelayed({
+                snackbar.dismiss()
+            }, 8000)
+
+            //조회가 가능하도록 다시 전화번호 형식을 원래대로 변경 (ex. 01000000000)
             val phoneNumber = phoneInput.text.toString().replace("-", "")
             fetchPrepaidInfo(phoneNumber)
         }
@@ -156,7 +167,7 @@ class MainActivity : AppCompatActivity() {
                 Log.e("PrepaidInfo", "Error: ${error.message}")
             }
         )
-        // Set timeout to 2 minutes
+        // Set timeout to 3 minutes
         request.retryPolicy = DefaultRetryPolicy(
             180 * 1000,
             DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

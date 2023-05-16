@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -40,6 +41,11 @@ android {
 
 dependencies {
 
+    //firebase 연동
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
     //날짜 일주일 전에 알림
     implementation 'androidx.work:work-runtime:2.7.0'
 
@@ -53,19 +59,11 @@ dependencies {
     // Gson dependency
     implementation 'com.google.code.gson:gson:2.8.8'
 
-    // 메뉴창이 아래로 스크롤되기 위해 필요한 리사이클러뷰
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-
-    //뷰페이저2 라이브러리
-    implementation ("androidx.viewpager2:viewpager2:1.0.0")
-
-    //화면 위치 표시 라이브러리 (인디케이터)
-    implementation 'com.tbuonomo:dotsindicator:4.2'
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

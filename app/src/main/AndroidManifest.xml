@@ -33,6 +33,7 @@
         android:theme="@style/Theme.Prepaid_Smartel"
         tools:targetApi="31">
 
+
         <activity
             android:name=".PrepaidInfoActivity"
             android:exported="false" />

@@ -10,10 +10,9 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 
 class NotificationReceiver : BroadcastReceiver() {
-
     override fun onReceive(context: Context, intent: Intent) {
         // Get the remaining days value from the intent extras
-        val remainingDays = intent.getIntExtra("remainingDays", 0)
+        val remain = intent.getIntExtra("remainingDays", 0)
 
         // Create an intent to launch the MainActivity when the notification is tapped
         val contentIntent = Intent(context, MainActivity::class.java)
@@ -21,9 +20,9 @@ class NotificationReceiver : BroadcastReceiver() {
 
         // Create a notification builder
         val notificationBuilder = NotificationCompat.Builder(context, "my_notification_channel")
-            .setSmallIcon(R.drawable.ic_notifications_24)
-            .setContentTitle("Prepaid phone recharge reminder")
-            .setContentText("Your prepaid phone balance will expire in $remainingDays day(s).")
+            .setSmallIcon(R.drawable.prepaid_app_icon_noti)
+            .setContentTitle("만료 일 알림")
+            .setContentText("요금 충전 만료일이 다가옵니다. 충전을 잊지 마세요! $remain day(s).")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(contentPendingIntent)
             .setAutoCancel(true)

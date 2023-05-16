@@ -6,7 +6,7 @@
     <string name="rateNm">手机套餐 :</string>
     <string name="rateAmount">话费（月) :</string>
     <string name="remain">话费余额 :</string>
-    <string name="bankAndAccount">账户信息 :</string>
+    <string name="bankAndAccount">账户信息</string>
     <string name="KRW">KR₩</string>
     <string name="paymentWireTransfer">- 转账后话费将自动充值。</string>
     <string name="search">函询</string>
@@ -16,4 +16,8 @@
     <string name="moveToSearch">移动到预付费手机查询画面。</string>
     <string name="acceptPush">推送通知同意</string>
     <string name="remain2">剩余金额 :</string>
+    <string name="loadingMinutes">查询预付余额时,  根据网络情况,最多需要3分钟以上。</string>
+    <string name="toChage">移动到相应页面进行充电.</string>
+    <string name="payKind">信用卡、微信支付、支付宝</string>
+    <string name="correctForm">请以正确的格式输入电话号码.</string>
 </resources>

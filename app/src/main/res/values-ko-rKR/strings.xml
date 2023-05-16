@@ -6,9 +6,9 @@
     <string name="rateNm">"요금제 : "</string>
     <string name="rateAmount">"월 요금 : "</string>
     <string name="remain">"만료일자 : "</string>
-    <string name="bankAndAccount">"계좌정보 : "</string>
+    <string name="bankAndAccount">전용 계좌정보</string>
     <string name="KRW">원</string>
-    <string name="paymentWireTransfer">"- 입금하시면 잠시뒤 자동충전 됩니다. "</string>
+    <string name="paymentWireTransfer">"- 아래 계좌로 입금하시면 잠시뒤 자동충전 됩니다. "</string>
     <string name="search">조회하기</string>
     <string name="copy_bank_acnt">"계좌번호가 복사되었습니다. "</string>
     <string name="charge">충전하기</string>
@@ -16,4 +16,8 @@
     <string name="moveToSearch">선불폰 조회화면으로 이동합니다.</string>
     <string name="acceptPush">알림동의</string>
     <string name="remain2">잔여 금액 :</string>
+    <string name="loadingMinutes">선불 잔액 조회의 경우,   네트워크 상황에 따라 최대 3분 이상 소요될 수 있습니다.</string>
+    <string name="toChage">충전을 위해 해당 페이지로 이동합니다.</string>
+    <string name="payKind">신용(체크)카드, 위챗페이, 알리페이</string>
+    <string name="correctForm">"올바른 형식으로 전화번호를 입력해주세요. "</string>
 </resources>

@@ -4,8 +4,10 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
@@ -25,10 +27,11 @@ class PrepaidInfoActivity : AppCompatActivity() {
     private lateinit var rateAmountEmptyView : TextView
     private lateinit var remainTextView2 : TextView
 
+    lateinit var increaseButton: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prepaid_info)
-
 
         // Get references to UI elements
         carrierText = findViewById(R.id.result_carrier)
@@ -40,6 +43,41 @@ class PrepaidInfoActivity : AppCompatActivity() {
 
         rateAmountEmptyView = findViewById(R.id.rateAmountEmptyView)
         remainTextView2 = findViewById(R.id.remainTextView2)
+
+        // Get references to an array of TextViews that you want to adjust the font size of
+        val myTextViews = arrayOf<TextView>(findViewById(R.id.result_carrier), findViewById(R.id.result_ratePlan), findViewById(R.id.result_rateAmount),
+            findViewById(R.id.result_remain), findViewById(R.id.result_bank), findViewById(R.id.result_bankAccount), findViewById(R.id.result_bankAccount),
+            findViewById(R.id.carrierTextView), findViewById(R.id.ratePlanTextView), findViewById(R.id.rateAmountTextView),
+            findViewById(R.id.remainTextView), findViewById(R.id.remainTextView2), findViewById(R.id.bankAccountTextView), findViewById(R.id.my_fee))
+
+        val increaseButton = findViewById<ImageButton>(R.id.increaseButton)
+        val decreaseButton = findViewById<ImageButton>(R.id.decreaseButton)
+
+        // Set the maximum and minimum font size limits
+        val maxFontSize = 85
+        val minFontSize = 50
+
+        // Set onClickListeners for the buttons
+        increaseButton.setOnClickListener {
+            for (textView in myTextViews) {
+                val currentSize = textView.textSize
+                val newSize = currentSize + 10
+
+                if (newSize <= maxFontSize) {
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, newSize)
+                }
+            }
+        }
+        decreaseButton.setOnClickListener {
+            for (textView in myTextViews) {
+                val currentSize = textView.textSize
+                val newSize = currentSize - 10
+
+                if (newSize >= minFontSize) {
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, newSize)
+                }
+            }
+        }
 
         // Get data from intent and display in UI
         val carrier = intent.getStringExtra("carrier") ?: ""
@@ -140,6 +178,19 @@ class PrepaidInfoActivity : AppCompatActivity() {
 
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        // 충전하는 사이트로 이동하는 버튼 클릭 이벤트
+        val btnCharge = findViewById<Button>(R.id.btn_charge)
+        btnCharge.setOnClickListener {
+
+            val url = "https://www.smartelmall.com/sub/prepay/p_service_new_test.asp#Reload_Credit/Debit_Card"
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+            val toastMoveMessage = getString(R.string.toChage)
+            Toast.makeText(this, toastMoveMessage, Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -5,9 +5,9 @@
     <string name="rateNm">Rate Plan :</string>
     <string name="rateAmount">Monthly Fee :</string>
     <string name="remain">Expiration Date :</string>
-    <string name="bankAndAccount">Bank Account Info :</string>
+    <string name="bankAndAccount">Bank Account Info</string>
     <string name="KRW">KRW</string>
-    <string name="paymentWireTransfer">- After the transfer, it will be automatically recharged</string>
+    <string name="paymentWireTransfer">- Payment will be completed after the wire transfer to the account below.</string>
     <string name="search">Search</string>
     <string name="copy_bank_acnt">The BankAccount number has been copied.</string>
     <string name="charge">Charge</string>
@@ -15,4 +15,8 @@
     <string name="moveToSearch">Go to the prepaid phone inquiry screen.</string>
     <string name="acceptPush">Accept push notifications</string>
     <string name="remain2">Remaining Amount :</string>
+    <string name="loadingMinutes">For prepaid balance inquiry,  it may take up to 3 minutes depending on the network situation.</string>
+    <string name="toChage">Go to the appropriate page for charging.</string>
+    <string name="payKind">Credit card, WeChat Pay, Alipay</string>
+    <string name="correctForm">Please enter the phone number in the correct format.</string>
 </resources>
