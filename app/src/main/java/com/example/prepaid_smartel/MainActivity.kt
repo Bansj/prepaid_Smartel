@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             this, R.color.orange),
             android.graphics.PorterDuff.Mode.MULTIPLY)
 
-        // Add text watcher to phone input field 전화번호 형식으로 기입되게 0100-0000-0000
+        // Add text watcher to phone input field 전화번호 형식으로 기입되게 010-0000-0000
         phoneInput.addTextChangedListener(object : TextWatcher {
             private var isFormatting = false
             private var isDeleting = false
